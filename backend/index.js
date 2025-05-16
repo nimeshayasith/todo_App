@@ -1,11 +1,11 @@
 const express = require('express');
 const connectDB = require('./config/db');
-const authRoutes = require('./routes/authRoutes');
+// const authRoutes = require('./routes/authRoutes');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const authMiddleware = require('./middleware/authMiddleware');
+// const authMiddleware = require('./middleware/authMiddleware');
 const taskRoutes = require('./routes/taskRoutes');
-const taskListRoutes = require('./routes/tasklistRoutes');
+// const taskListRoutes = require('./routes/tasklistRoutes');
 
 
 
@@ -24,7 +24,7 @@ app.use(cors({
 }));
 
 // app.use('/api/auth', authRoutes);
-app.use('/api/tasks', authMiddleware, taskRoutes);
+app.use('/api/tasks', taskRoutes);
 // app.use('/api/tasklists', authMiddleware, taskListRoutes);
 
 const PORT = process.env.PORT || 5000;
